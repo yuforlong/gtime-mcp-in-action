@@ -83,6 +83,7 @@ async def get_prompt(
     raise ValueError(f"未实现提示模板 '{name}' 的处理逻辑")
 
 async def main():
+    print("文件系统助手已启动，等待连接...")
     async with stdio_server() as (read_stream, write_stream):
         await app.run(
             read_stream,

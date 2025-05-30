@@ -19,8 +19,8 @@ async def list_resources() -> list[types.Resource]:
     return [
         # 创建一个资源对象
         types.Resource(
-            uri="example://resource",  # 资源的唯一标识符
-            name="Example Resource"    # 资源的显示名称
+            uri="file:///logs/app.log",  # 资源的唯一标识符
+            name="text/plain"    # 资源的显示名称
         )
     ]
 

@@ -18,7 +18,8 @@ async def main():
     server_script = sys.argv[1]
     # 使用服务器的 Python 解释器来启动 Server，而不是当前客户端的Python环境
     params = StdioServerParameters(
-        command="/mnt/external_disk/venv/20250426_MCP_Server/bin/python3",
+        # command="/mnt/external_disk/venv/20250426_MCP_Server/bin/python3",
+        command="/home/huangj2/Documents/mcp-in-action/02-mcp-rag/rag-server/.venv/bin/python",
         args=[server_script],
         env=None
     )
