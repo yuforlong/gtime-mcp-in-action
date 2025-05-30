@@ -1,0 +1,2 @@
+uv run 01-client.py ../server/04-more-resource-server.py
+python 01-client.py ../server/04-more-resource-server.py
