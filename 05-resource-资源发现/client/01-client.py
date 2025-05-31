@@ -5,6 +5,7 @@ python 05-resource-资源发现/client/simple-client.py 05-resource-资源发现
 '''
 import asyncio
 import sys
+import os
 from mcp import ClientSession, StdioServerParameters
 from mcp.types import Notification, Resource
 from mcp.client.stdio import stdio_client
@@ -16,10 +17,12 @@ async def main():
         sys.exit(1)
 
     server_script = sys.argv[1]
+    # 使用相对路径构建服务器 Python 解释器路径
+    server_venv_python = os.path.join(os.path.dirname(os.path.dirname(__file__)), "server", ".venv", "bin", "python")
+    
     # 使用服务器的 Python 解释器来启动 Server，而不是当前客户端的Python环境
     params = StdioServerParameters(
-        # command="/mnt/external_disk/venv/20250426_MCP_Server/bin/python3",
-        command="/home/huangj2/Documents/mcp-in-action/02-mcp-rag/rag-server/.venv/bin/python",
+        command=server_venv_python,
         args=[server_script],
         env=None
     )
