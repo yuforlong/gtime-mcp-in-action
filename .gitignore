@@ -28,6 +28,7 @@ env/
 .venv
 env.bak/
 venv.bak/
+98-temp/
 
 # IDE
 .idea/
