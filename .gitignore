@@ -40,6 +40,9 @@ venv.bak/
 # System
 .DS_Store
 Thumbs.db
+**/archive*/
+*archive*/
+*/archive*/
 
 
 # Local development settings

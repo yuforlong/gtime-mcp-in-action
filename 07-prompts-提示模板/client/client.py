@@ -37,8 +37,15 @@ class CodeReviewClient:
         
         # 5) 获取可用的提示模板
         self.prompts = await self.session.list_prompts()
+
+        # 兼容 dict_items
+        if not isinstance(self.prompts, dict):
+            self.prompts = dict(self.prompts)
+
+        prompt_list = self.prompts.get("prompts", [])
+
         print("可用提示模板：")
-        for prompt in self.prompts:
+        for prompt in prompt_list:
             if hasattr(prompt, 'name') and hasattr(prompt, 'description'):
                 print(f"- {prompt.name}: {prompt.description}")
             else:

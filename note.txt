@@ -1,1 +1,6 @@
-python client.py ../server/server.py
+运行客户端代码，就可以直接访问MCP Server功能
+python client.py ../server/server.py 或者 uv run client.py ../server/server.py
+
+注意
+1. 在每一个客户端中，都需要修改command="/mnt/external_disk/venv/20250426_MCP_Server/bin/python"中的Python环境路径，根据你的环境来调整。
+2. 如果某一个Folder没有pyproject.toml文件，两个选择。自己模仿着制作一个，然后运行uv，或者指定一个合适的Python环境（可以来自其它项目），然后用Python运行程序。

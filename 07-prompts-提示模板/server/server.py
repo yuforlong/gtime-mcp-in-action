@@ -68,7 +68,7 @@ async def get_prompt(
         return types.GetPromptResult(
             messages=[
                 types.PromptMessage(
-                    role="assistant",
+                    role="system",
                     content=types.TextContent(
                         type="text",
                         text=f"你是一个专业的代码审查助手，专注于{language}代码的{focus}方面。"
