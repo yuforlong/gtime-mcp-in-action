@@ -1,6 +1,7 @@
 '''
 运行方式：
-python 06-tools-工具列表/client/simple-client.py 06-tools-工具列表/server/simple-tools-v1.py
+uv run 01-simple-tool-call.py ../server/simple-tools-v1-FastMCP.py
+uv run 01-simple-tool-call.py ../server/simple-tools-v2-Protocal.py
 此命令将启动客户端并连接到指定的工具服务器
 '''
 import asyncio
@@ -17,7 +18,7 @@ async def main():
 
     server_script = sys.argv[1]
     params = StdioServerParameters(
-        command="/mnt/external_disk/venv/20250426_MCP_Server/bin/python3",
+        command="/home/huangjia/Documents/17_MCP/mcp-in-action/06-tools-工具列表/server/.venv/bin/python3",
         args=[server_script],
         env=None
     )

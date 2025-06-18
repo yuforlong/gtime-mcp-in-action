@@ -1,6 +1,5 @@
 import asyncio
 from mcp.server.fastmcp import FastMCP
-from mcp.server.stdio import stdio_server
 
 # 初始化 FastMCP 服务器
 mcp = FastMCP("tools-server")
