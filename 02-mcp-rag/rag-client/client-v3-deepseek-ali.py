@@ -22,7 +22,7 @@ class RagClient:
         # 1) 构造参数对象
         params = StdioServerParameters(
             # 替换下你自己 server 下的 python 路径
-            command="/Users/wukong/00.Study/04-geektime/02.code/mcp-in-action-master/02-mcp-rag/rag-server/.venv/bin/python",
+            command="/Users/wukong/00.Study/04-geektime/02.code/fork/mcp-in-action/02-mcp-rag/rag-server/.venv/bin/python",
             args=[server_script],
         )
         # 2) 保存上下文管理器
