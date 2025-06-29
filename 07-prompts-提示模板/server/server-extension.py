@@ -41,6 +41,22 @@ PROMPTS = {
                 required=True
             )
         ]
+    ),
+    "refactor-code": types.Prompt(
+        name="refactor-code",
+        description="重构代码",
+        arguments=[
+            types.PromptArgument(
+                name="code",
+                description="需要重构的代码",
+                required=True
+            ),
+            types.PromptArgument(
+                name="language",
+                description="编程语言",
+                required=True
+            )
+        ]
     )
 }
 
@@ -102,6 +118,29 @@ async def get_prompt(
                     content=types.TextContent(
                         type="text",
                         text=f"请解释以下{language}代码的工作原理：\n\n{code}"
+                    )
+                )
+            ]
+        )
+        
+    elif name == "refactor-code":
+        code = arguments.get("code") if arguments else ""
+        language = arguments.get("language") if arguments else "Unknown"
+        
+        return types.GetPromptResult(
+            messages=[
+                types.PromptMessage(
+                    role="assistant",
+                    content=types.TextContent(
+                        type="text",
+                        text=f"你是一个专业的编程导师，擅长重构{language}代码。"
+                    )
+                ),
+                types.PromptMessage(
+                    role="user",
+                    content=types.TextContent(
+                        type="text",
+                        text=f"请重构以下{language}代码：\n\n{code}"
                     )
                 )
             ]
