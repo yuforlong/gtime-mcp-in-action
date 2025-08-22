@@ -20,9 +20,10 @@ class RagClient:
 
     async def connect(self, server_script: str):
         # 1) 构造参数对象
+        current_folder = os.path.dirname(os.path.abspath(__file__))
+        command = os.path.join(current_folder, "../rag-server/.venv/bin/python")
         params = StdioServerParameters(
-            # 替换下你自己 server 下的 python 路径
-            command="/Users/wukong/00.Study/04-geektime/02.code/fork/mcp-in-action/02-mcp-rag/rag-server/.venv/bin/python",
+            command=command,
             args=[server_script],
         )
         # 2) 保存上下文管理器
