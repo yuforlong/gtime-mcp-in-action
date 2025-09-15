@@ -21,7 +21,7 @@ class RagClient:
     async def connect(self, server_script: str):
         # 1) 构造参数对象
         params = StdioServerParameters(
-            command="/home/huangj2/Documents/mcp-in-action/02-mcp-rag/rag-server/.venv/bin/python",
+            command="/Users/kk/pyProject/gtime-mcp-in-action/02-mcp-rag/rag-server/.venv/bin/python",
             args=[server_script],
         )
         # 2) 保存上下文管理器
@@ -64,7 +64,7 @@ class RagClient:
 async def main():
     print(">>> 开始初始化 RAG 系统")
     if len(sys.argv) < 2:
-        print("用法: python client.py <server.py 路径>")
+        print("用法: python client-v3-deepseek.py <server.py 路径>")
         return
 
     client = RagClient()

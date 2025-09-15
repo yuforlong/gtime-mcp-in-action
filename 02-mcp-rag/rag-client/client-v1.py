@@ -18,7 +18,7 @@ class RagClient:
         # 1) 构造参数对象
         params = StdioServerParameters(
             # command="uv",
-            command="/home/huangj2/Documents/mcp-in-action/02-mcp-rag/rag-server/.venv/bin/python",
+            command="/Users/kk/pyProject/gtime-mcp-in-action/02-mcp-rag/rag-server/.venv/bin/python",
             # command="/home/huangj2/Documents/mcp-in-action/02-mcp-rag/rag-server/.venv/bin/uv",
             # args=["run", server_script],
             args=["-u",server_script],
